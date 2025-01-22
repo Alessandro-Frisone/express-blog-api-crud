@@ -1,8 +1,8 @@
-const middlewareErrorNumber = function (req, res, next){
+const middlewareErrorString = function (req, res, next){
     if(isNaN(req.params.id)){
         return res.sendStatus(400)
     }
     next()
 }
 
-module.exports = {middlewareErrorNumber,}
+module.exports = {middlewareErrorString,}
