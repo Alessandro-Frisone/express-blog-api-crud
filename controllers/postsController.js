@@ -64,7 +64,9 @@ const destroy = function (req, res) {
     if (!post){
        res.sendStatus(404)
     } 
-    res.json(`Eliminazione del post ${req.params.id} `);
+    postsData.splice(postsData.indexOf(post), 1)
+    console.log(postsData)
+    res.sendStatus(204)
 }
 
 
