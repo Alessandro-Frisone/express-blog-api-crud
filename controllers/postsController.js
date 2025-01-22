@@ -1,5 +1,8 @@
 // IMPORTO L'ARRAY DEI POST
+const { Router } = require("express");
 const postsData = require("../data/allPosts")
+
+
 
 // INDEX
 const index = function (req, res) {
@@ -15,10 +18,6 @@ const index = function (req, res) {
 
 // SHOW
 const show = function (req, res,) {
-    if(isNaN(req.params.id)){
-        return res.sendStatus(400)
-    }
-
     const post = postsData.find((elm) => elm.id == req.params.id)
 
     if (!post){
@@ -34,10 +33,6 @@ const create = function (req, res) {
 
 // UPDATE
 const update = function (req, res) {
-    if(isNaN(req.params.id)){
-        return res.sendStatus(400)
-    }
-
     const post = postsData.find((elm) => elm.id == req.params.id)
 
     if (!post){
@@ -48,10 +43,6 @@ const update = function (req, res) {
 
 // MODIFY
 const modify = function (req, res) {
-    if(isNaN(req.params.id)){
-        return res.sendStatus(400)
-    }
-
     const post = postsData.find((elm) => elm.id == req.params.id)
 
     if (!post){
@@ -62,10 +53,6 @@ const modify = function (req, res) {
 
 // DESTROY
 const destroy = function (req, res) {
-    if(isNaN(req.params.id)){
-        return res.sendStatus(400)
-    }
-
     const post = postsData.find((elm) => elm.id == req.params.id)
 
     if (!post){

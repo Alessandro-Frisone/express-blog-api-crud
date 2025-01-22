@@ -5,6 +5,12 @@ const router = express.Router()
 const controller = require("../controllers/postsController")
 
 
+// IMPORTAZIONE MIDDLEWARE
+const middleware = require("../middleware/validatorString")
+// ISTRUISCO I MIDDLEWARE
+router.use('/:id', middleware.middlewareErrorNumber)
+
+
 // Index
 router.get('/', controller.index);
 
