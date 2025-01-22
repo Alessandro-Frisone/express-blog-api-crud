@@ -1,0 +1,23 @@
+{
+  "name": "express-blog-routing",
+  "version": "1.0.0",
+  "description": "Utilizzo delle operazioni CRUD nel bolg creato ieri",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alessandro-Frisone/express-blog-routing.git"
+  },
+  "author": "Alessandro Frisone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alessandro-Frisone/express-blog-routing/issues"
+  },
+  "homepage": "https://github.com/Alessandro-Frisone/express-blog-routing#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
