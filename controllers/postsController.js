@@ -3,11 +3,11 @@ const postsData = require("../data/allPosts")
 
 // INDEX
 const index = function (req, res) {
-    res.json(`Lista dei post`); 
+    res.json(postsData); 
 };
 
 // SHOW
-const show = function (req, res) {
+const show = function (req, res,) {
     if(isNaN(req.params.id)){
         return res.sendStatus(400)
     }
