@@ -3,7 +3,14 @@ const postsData = require("../data/allPosts")
 
 // INDEX
 const index = function (req, res) {
-    res.json(postsData); 
+    let postsFiltered = postsData
+    const { tag } = req.query
+    if (tag) {
+        postsFiltered = postsFiltered.filter((post) => 
+            post.tags.includes(tag)
+        )
+    }
+    res.json(postsFiltered); 
 };
 
 // SHOW
