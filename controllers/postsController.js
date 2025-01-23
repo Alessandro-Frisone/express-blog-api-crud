@@ -48,7 +48,8 @@ function update (req, res) {
     const post = postsData.find((elm) => elm.id == req.params.id)
 
     if (!post){
-       res.sendStatus(404)
+       res.status(404)
+       res.json("ID inesistente")
     } 
     post.title = req.body.title
     post.content = req.body.content
