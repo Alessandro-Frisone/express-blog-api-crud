@@ -22,12 +22,17 @@ const show = function (req, res,) {
 
     if (!post){
        res.sendStatus(404)
-    }   
+    } 
     res.json(post);
 }
 
 // CREATE
 const create = function (req, res) {
+    const post = postsData.find((elm) => elm.id == req.params.id)
+
+    if (!post){
+       res.sendStatus(404)
+    } 
     res.json(`Creazione nuovo post`);
 }
 
