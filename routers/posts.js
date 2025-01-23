@@ -3,10 +3,10 @@ const router = express.Router()
 
 // IMPORTANZIONE FUNZIONI CONTROLLER
 const controller = require("../controllers/postsController")
-
-
 // IMPORTAZIONE MIDDLEWARE
 const middleware = require("../middleware/validatorString")
+
+
 // ISTRUISCO I MIDDLEWARE
 router.use('/:id', middleware.middlewareErrorString)
 
