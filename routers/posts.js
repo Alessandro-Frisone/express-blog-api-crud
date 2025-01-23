@@ -17,8 +17,8 @@ router.get('/', controller.index);
 // Show
 router.get('/:id', controller.show);
 
-// Create
-router.post('/', controller.create);
+// Store
+router.post('/', controller.store);
 
 // Update
 router.put('/:id', controller.update);

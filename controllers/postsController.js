@@ -26,13 +26,8 @@ const show = function (req, res,) {
     res.json(post);
 }
 
-// CREATE
-const create = function (req, res) {
-    const post = postsData.find((elm) => elm.id == req.params.id)
-
-    if (!post){
-       res.sendStatus(404)
-    } 
+// STORE
+const store = function (req, res) {
     res.json(`Creazione nuovo post`);
 }
 
@@ -69,4 +64,4 @@ const destroy = function (req, res) {
 }
 
 
-module.exports = {index, show, create, update, modify, destroy}
+module.exports = {index, show, store, update, modify, destroy}
