@@ -28,7 +28,18 @@ const show = function (req, res,) {
 
 // STORE
 const store = function (req, res) {
-    res.json(`Creazione nuovo post`);
+    const newId = postsData[postsData.length - 1].id + 1;
+    
+    const newPizza = {
+    id: newId,
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.image,
+    tags: req.body.tag
+}
+
+    postsData.push(newPizza);
+    res.json(newPizza);
 }
 
 // UPDATE
