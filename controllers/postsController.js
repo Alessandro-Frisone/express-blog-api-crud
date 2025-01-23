@@ -35,10 +35,11 @@ const store = function (req, res) {
     title: req.body.title,
     content: req.body.content,
     image: req.body.image,
-    tags: req.body.tag
+    tags: req.body.tags
 }
 
     postsData.push(newPizza);
+    res.status(201)
     res.json(newPizza);
 }
 
@@ -49,7 +50,11 @@ const update = function (req, res) {
     if (!post){
        res.sendStatus(404)
     } 
-    res.json(`Modifica integrale del post ${req.params.id} `);
+    post.title = req.body.title
+    post.content = req.body.content
+    post.image = req.body.image
+    post.tags = req.body.tags
+    res.json(post)
 }
 
 // MODIFY
@@ -59,7 +64,22 @@ const modify = function (req, res) {
     if (!post){
        res.sendStatus(404)
     } 
-    res.json(`Modifica parziale del post ${req.params.id} `);
+
+
+    if(req.body.title){
+        post.title = req.body.title
+    }
+    if(req.body.content){
+        post.content = req.body.content
+    }
+    if(req.body.image){
+        post.image = req.body.image
+    }
+    if(req.body.tag){
+        post.tags = req.body.tag
+    }
+
+    res.json(post)
 }
 
 // DESTROY
