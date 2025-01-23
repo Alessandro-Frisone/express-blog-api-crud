@@ -5,7 +5,7 @@ const postsData = require("../data/allPosts")
 
 
 // INDEX
-const index = function (req, res) {
+function index (req, res) {
     let postsFiltered = postsData
     const { tag } = req.query
     if (tag) {
@@ -17,7 +17,7 @@ const index = function (req, res) {
 };
 
 // SHOW
-const show = function (req, res,) {
+function show (req, res,) {
     const post = postsData.find((elm) => elm.id == req.params.id)
 
     if (!post){
@@ -27,7 +27,7 @@ const show = function (req, res,) {
 }
 
 // STORE
-const store = function (req, res) {
+function store (req, res) {
     const newId = postsData[postsData.length - 1].id + 1;
     
     const newPizza = {
@@ -44,7 +44,7 @@ const store = function (req, res) {
 }
 
 // UPDATE
-const update = function (req, res) {
+function update (req, res) {
     const post = postsData.find((elm) => elm.id == req.params.id)
 
     if (!post){
@@ -58,7 +58,7 @@ const update = function (req, res) {
 }
 
 // MODIFY
-const modify = function (req, res) {
+function modify (req, res) {
     const post = postsData.find((elm) => elm.id == req.params.id)
 
     if (!post){
@@ -83,7 +83,7 @@ const modify = function (req, res) {
 }
 
 // DESTROY
-const destroy = function (req, res) {
+function destroy (req, res) {
     const post = postsData.find((elm) => elm.id == req.params.id)
 
     if (!post){
