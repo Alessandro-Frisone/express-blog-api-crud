@@ -12,6 +12,7 @@ router.use('/:id', middleware.middlewareErrorString)
 // ISTRUISCO LA LETTURA DEL BODY_PARSER
 router.use(express.json());
 
+
 // Index
 router.get('/', controller.index);
 
