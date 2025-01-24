@@ -67,18 +67,17 @@ function modify (req, res) {
     } 
 
 
-    if(req.body.title){
-        post.title = req.body.title
-    }
-    if(req.body.content){
-        post.content = req.body.content
-    }
-    if(req.body.image){
-        post.image = req.body.image
-    }
-    if(req.body.tag){
-        post.tags = req.body.tag
-    }
+    
+    post.title = req.body.title || post.title
+    
+    
+    post.content = req.body.content || post.content
+    
+    
+    post.image = req.body.image || post.image
+    
+    
+    post.tags = req.body.tag || post.tags
 
     res.json(post)
 }
