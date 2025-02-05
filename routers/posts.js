@@ -1,11 +1,15 @@
 const express = require("express")
 const router = express.Router()
+const cors = require("cors")
 
 // IMPORTANZIONE FUNZIONI CONTROLLER
 const controller = require("../controllers/postsController")
 // IMPORTAZIONE MIDDLEWARE
 const middleware = require("../middleware/validatorString")
 
+router.use(cors({
+    origin: "http://localhost:5173/"
+}))
 
 // ISTRUISCO I MIDDLEWARE
 router.use('/:id', middleware.middlewareErrorString)
