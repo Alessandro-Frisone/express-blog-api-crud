@@ -8,7 +8,7 @@ const controller = require("../controllers/postsController")
 const middleware = require("../middleware/validatorString")
 
 router.use(cors({
-    origin: "http://localhost:5173/"
+    origin: "http://localhost:5173"
 }))
 
 // ISTRUISCO I MIDDLEWARE
